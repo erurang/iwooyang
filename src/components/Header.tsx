@@ -7,24 +7,17 @@ import SearchDimmed from "./SearchDimmed";
 
 export default function Header() {
   return (
-    <header
-      className="h-14 p-2 bg-white md:pt-5 md:px-4 md:h-20 border-[#E5E5E5] border-b-2 grid 
-
-    grid-cols-[1fr,1fr]
-      lg:grid-cols-[1fr,1fr,2fr,1fr,1fr]
-    "
-    >
+    <header className="h-14 p-2 bg-white md:pt-5 md:px-4 md:h-20 border-[#E5E5E5] border-b-2 grid grid-cols-[1fr,1fr] lg:grid-cols-[1fr,1fr,2fr,1fr,1fr]">
       {/* 1번  */}
-      <div>
-        <Image
-          width={800}
-          height={70}
-          alt="logo.png"
-          src="/assets/logo.jpg"
-          className="hidden lg:inline-block"
-        />
-        <img className="lg:hidden h-11" src="assets/short_logo.png" />
-      </div>
+
+      <Image
+        width={100}
+        height={10}
+        alt="logo.png"
+        src="/assets/logo.jpg"
+        className="hidden lg:inline-block"
+      />
+      <img className="lg:hidden h-11" src="assets/short_logo.png" />
 
       <div className="hidden lg:block" />
       {/* 2번 */}

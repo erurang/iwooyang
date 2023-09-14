@@ -4,8 +4,9 @@ import ReactPlayer from "react-player";
 export default function VideoComponent() {
   return (
     <ReactPlayer
-      url="https://youtu.be/0Unm7pDnEQI"
+      url="/assets/video.mp4"
       width="100%"
+      height="100%"
       controls
       playing
       muted
