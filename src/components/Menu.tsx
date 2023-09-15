@@ -21,6 +21,15 @@ export default function MenuComponent() {
 
       <div className="grid grid-rows-[1fr,1fr,1fr] gap-10 cursor-pointer ">
         <div>
+          <MenuTitleComponent title="기업정보" />
+          <MenuItemComponent title="인사말" />
+          <MenuItemComponent title="주요사업" />
+          <MenuItemComponent title="적용분야" />
+          <MenuItemComponent title="연혁" />
+          <MenuItemComponent title="지적재산권 및 인증서" />
+          <MenuItemComponent title="찾아오시는 길" />
+        </div>
+        <div>
           <MenuTitleComponent title="제품소개" />
           <MenuItemComponent title="산업용호스 및 벨로우즈" />
           <MenuItemComponent title="메디칼호스" />
@@ -31,20 +40,16 @@ export default function MenuComponent() {
           <MenuItemComponent title="CFRP/플라스틱 가공" />
           <MenuItemComponent title="복합소재 응용품" />
         </div>
-        <div>
-          <MenuTitleComponent title="회사소개" />
-          <MenuItemComponent title="인사말" />
-          <MenuItemComponent title="주요사업" />
-          <MenuItemComponent title="적용분야" />
-          <MenuItemComponent title="연혁" />
-          <MenuItemComponent title="지적재산권 및 인증서" />
-          <MenuItemComponent title="찾아오시는 길" />
-        </div>
+
         <div>
           <MenuTitleComponent title="고객지원" />
           <MenuItemComponent title="공지사항" />
           <MenuItemComponent title="온라인문의" />
           <MenuItemComponent title="고객센터" />
+        </div>
+        <div>
+          <MenuTitleComponent title="채용" />
+          <MenuItemComponent title="지원" />
         </div>
       </div>
     </div>
