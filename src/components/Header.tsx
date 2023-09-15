@@ -11,18 +11,18 @@ export default function Header() {
       {/* 1번  */}
 
       <Image
-        width={100}
+        width={800}
         height={10}
         alt="logo.png"
         src="/assets/logo.jpg"
-        className="hidden lg:inline-block"
+        className="hidden lg:inline-block h-11 w-full"
       />
       <img className="lg:hidden h-11" src="assets/short_logo.png" />
 
       <div className="hidden lg:block" />
       {/* 2번 */}
       <div className="hidden lg:flex lg:justify-between lg:items-center bg-blue w-full">
-        <span>기업정보</span>
+        <span>회사소개</span>
         <span>제품소개</span>
         <span>고객지원</span>
         <span>채용</span>
