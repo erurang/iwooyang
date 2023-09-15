@@ -7,7 +7,22 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        growFromCenter: {
+          "0%": { transform: "scaleX(0)", transformOrigin: "center" },
+          "100%": { transform: "scaleX(1)", transformOrigin: "center" },
+        },
+        shrinkToCenter: {
+          "0%": { transform: "scaleX(1)", transformOrigin: "center" },
+          "100%": { transform: "scaleX(0)", transformOrigin: "center" },
+        },
+      },
+      animation: {
+        growFromCenter: "growFromCenter 0.3s forwards",
+        shrinkToCenter: "shrinkToCenter 0.3s forwards",
+      },
+    },
   },
   plugins: [],
 };

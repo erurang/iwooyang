@@ -39,7 +39,7 @@ export default function SearchDimmed() {
             </div>
           </div>
           <div
-            className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-20 flex items-center justify-center"
+            className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-30 flex items-center justify-center "
             onClick={() => setIsDimmed(false)}
           ></div>
         </>
