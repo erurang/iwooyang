@@ -3,10 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import DropdownContentComponent from "./dropdownContent";
+import DropdownContentComponent from "./DropdownContent";
 import DropdownTitleComponent from "./DropdownTitle";
 import LanguageComponent from "./Language";
-import MenuComponent from "./Menu";
 import SearchDimmed from "./SearchDimmed";
 
 export default function Header() {
