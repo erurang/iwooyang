@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className={`${inter.className}  mt-16`}>
+      <body className={`${inter.className}  mt-20`}>
         <Header />
         {children}
         <Footer />

@@ -14,12 +14,13 @@ export default function Header() {
   const [scrollDirection, setScrollDirection] = useState("up");
   const [underlineAnimation, setUnderlineAnimation] =
     useState("shrinkToCenter");
+  const headerHeight = 80;
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > scrollY) {
+      if (currentScrollY > headerHeight && currentScrollY > scrollY) {
         setScrollDirection("down");
       } else {
         setScrollDirection("up");
@@ -39,18 +40,20 @@ export default function Header() {
         scrollDirection === "down"
           ? "transform -translate-y-full"
           : "transform translateY(0)"
-      } z-10`}
+      } z-10 md:border-b-[1px] md:border-gray-200`}
       onMouseLeave={() => setActiveDropdown(null)}
     >
       <div className="grid grid-cols-[1fr,1fr] lg:grid-cols-[1fr,3fr,1fr] justify-between items-center p-4">
-        <Image
-          width={500}
-          height={10}
-          alt="logo.png"
-          src="/assets/logo.jpg"
-          className="hidden lg:inline-block "
-        />
-        <img className="lg:hidden " src="assets/short_logo.png" />
+        <Link href={"/"}>
+          <Image
+            width={500}
+            height={10}
+            alt="logo.png"
+            src="/assets/logo.jpg"
+            className="hidden lg:inline-block "
+          />
+          <img className="lg:hidden " src="assets/short_logo.png" />
+        </Link>
 
         <div className="lg:space-x-8 hidden lg:flex justify-center">
           {/* 이부분은 나중에 i18n적용후 처리 */}
@@ -104,13 +107,14 @@ export default function Header() {
             <div className="flex px-16 py-4 bg-white justify-center">
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="CEO" />
-                <DropdownContentComponent title="인사말" />
+                <DropdownContentComponent title="인사말" href="/greeting" />
               </div>
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="회사소개" />
+                <DropdownContentComponent title="소개" href="/greeting" />
                 <DropdownContentComponent title="연혁" />
                 <DropdownContentComponent title="지적재산권 및 인증서" />
-                <DropdownContentComponent title="회사소개영상" />
+                {/* <DropdownContentComponent title="회사소개영상" /> */}
                 <DropdownContentComponent title="찾아오시는 길" />
               </div>
 
@@ -189,10 +193,10 @@ export default function Header() {
                 <DropdownTitleComponent title="무분진" />
                 <DropdownContentComponent title="케이블 포드" />
               </div>
-              <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
+              {/* <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="CFRP/플라스틱 가공" />
                 <DropdownContentComponent title="?????" />
-              </div>
+              </div> */}
               <div className="pl-6 pr-12 ">
                 <DropdownTitleComponent title="복합소재 응용품" />
                 <DropdownContentComponent title="방탄 방검용 보호복 소재" />

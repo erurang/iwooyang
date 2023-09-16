@@ -9,6 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       keyframes: {
+        slideUp: {
+          "0%": { transform: "translateY(100%)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
         growFromCenter: {
           "0%": { transform: "scaleX(0)", transformOrigin: "center" },
           "100%": { transform: "scaleX(1)", transformOrigin: "center" },
@@ -21,6 +25,7 @@ const config: Config = {
       animation: {
         growFromCenter: "growFromCenter 0.3s forwards",
         shrinkToCenter: "shrinkToCenter 0.3s forwards",
+        slideUp: "slideUp 1s forwards",
       },
     },
   },
