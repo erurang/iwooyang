@@ -111,9 +111,12 @@ export default function Header() {
               </div>
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="회사소개" />
-                <DropdownContentComponent title="소개" href="/greeting" />
+                {/* <DropdownContentComponent title="소개" href="/greeting" /> */}
                 <DropdownContentComponent title="연혁" href="/history" />
-                <DropdownContentComponent title="지적재산권 및 인증서" />
+                <DropdownContentComponent
+                  title="지적재산권 및 인증서"
+                  href="credentials"
+                />
                 {/* <DropdownContentComponent title="회사소개영상" /> */}
                 <DropdownContentComponent title="찾아오시는 길" />
               </div>
