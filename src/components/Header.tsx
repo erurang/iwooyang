@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import DropdownContentComponent from "./DropdownContent";
@@ -15,6 +16,7 @@ export default function Header() {
   const [underlineAnimation, setUnderlineAnimation] =
     useState("shrinkToCenter");
   const headerHeight = 80;
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,18 +54,25 @@ export default function Header() {
             src="/assets/logo.jpg"
             className="hidden lg:inline-block "
           />
-          <img className="lg:hidden " src="assets/short_logo.png" />
+          <img className="lg:hidden " src="/assets/short_logo.png" />
         </Link>
 
         <div className="lg:space-x-8 hidden lg:flex justify-center">
           {/* 이부분은 나중에 i18n적용후 처리 */}
           {["기업정보", "제품소개", "고객지원", "채용"].map((menu: any) => (
             <div
-              className="pt-2 text-lg"
+              className={`pt-2 text-lg ${
+                menu === "제품소개" && "cursor-pointer"
+              }`}
               key={menu}
               onMouseEnter={() => {
                 setActiveDropdown(menu);
                 setUnderlineAnimation("growFromCenter");
+              }}
+              onClick={() => {
+                if (menu === "제품소개")
+                  router.push("/product", { scroll: false });
+                return;
               }}
               onMouseLeave={() => setUnderlineAnimation("shrinkToCenter")}
             >
@@ -85,7 +94,8 @@ export default function Header() {
           <div className="hidden lg:block">
             <SearchDimmed />
           </div>
-          <Link href={"/sitemap"}>
+
+          <Link href={"/sitemap"} className="lg:hidden">
             <Image
               className="pt-1 cursor-pointer"
               alt="menu_icon"
@@ -128,7 +138,7 @@ export default function Header() {
               </div>
             </div>
           )}
-          {activeDropdown === "제품소개" && (
+          {/* {activeDropdown === "제품소개" && (
             <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="호스" />
@@ -196,17 +206,14 @@ export default function Header() {
                 <DropdownTitleComponent title="무분진" />
                 <DropdownContentComponent title="케이블 포드" />
               </div>
-              {/* <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
-                <DropdownTitleComponent title="CFRP/플라스틱 가공" />
-                <DropdownContentComponent title="?????" />
-              </div> */}
+             
               <div className="pl-6 pr-12 ">
                 <DropdownTitleComponent title="복합소재 응용품" />
                 <DropdownContentComponent title="방탄 방검용 보호복 소재" />
                 <DropdownContentComponent title="구조용 스트레처 백" />
               </div>
             </div>
-          )}
+          )} */}
           {activeDropdown === "고객지원" && (
             <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
