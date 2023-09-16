@@ -27,7 +27,9 @@ export default function ProductComponent({ content, title, img }: IProps) {
             <h2 className="text-2xl font-bold mb-4">{title}</h2>
             <ul className="mb-6">
               {content?.map((item) => (
-                <li className="mb-2">- {item}</li>
+                <li className="mb-2" key={item}>
+                  - {item}
+                </li>
               ))}
             </ul>
 
