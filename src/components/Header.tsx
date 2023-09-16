@@ -104,7 +104,7 @@ export default function Header() {
           onMouseLeave={() => setUnderlineAnimation("growFromCenter")}
         >
           {activeDropdown === "기업정보" && (
-            <div className="flex px-16 py-4 bg-white justify-center">
+            <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="CEO" />
                 <DropdownContentComponent title="인사말" href="/greeting" />
@@ -112,7 +112,7 @@ export default function Header() {
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="회사소개" />
                 <DropdownContentComponent title="소개" href="/greeting" />
-                <DropdownContentComponent title="연혁" />
+                <DropdownContentComponent title="연혁" href="/history" />
                 <DropdownContentComponent title="지적재산권 및 인증서" />
                 {/* <DropdownContentComponent title="회사소개영상" /> */}
                 <DropdownContentComponent title="찾아오시는 길" />
@@ -126,7 +126,7 @@ export default function Header() {
             </div>
           )}
           {activeDropdown === "제품소개" && (
-            <div className="flex px-16 py-4 bg-white justify-center">
+            <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="호스" />
                 <div className="indent-4">
@@ -205,7 +205,7 @@ export default function Header() {
             </div>
           )}
           {activeDropdown === "고객지원" && (
-            <div className="flex px-16 py-4 bg-white justify-center">
+            <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="안내" />
                 <DropdownContentComponent title="공지사항" />
@@ -218,7 +218,7 @@ export default function Header() {
             </div>
           )}
           {activeDropdown === "채용" && (
-            <div className="flex px-16 py-4 bg-white justify-center">
+            <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
               <div className="pl-6 pr-12">
                 <DropdownTitleComponent title="지원" />
                 <DropdownContentComponent title="채용" />

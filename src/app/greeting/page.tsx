@@ -11,8 +11,10 @@ export default function Greeting() {
 
       <div className="pb-10 md:py-20 px-4">
         <div className="md:text-5xl md:font-bold text-[#666666] md:text-black pt-2 flex items-center md:flex-col">
-          <p className="animate-slideUp">어제보다 나은 오늘을</p>
-          <p className="md:pt-2 ml-2 animate-slideUp">오늘보다 나은 내일을</p>
+          <p className="md:animate-slideUp">어제보다 나은 오늘을</p>
+          <p className="md:pt-2 ml-2 md:animate-slideUp">
+            오늘보다 나은 내일을
+          </p>
         </div>
       </div>
       <Image
