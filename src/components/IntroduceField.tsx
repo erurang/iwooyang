@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 interface IProps {
   title: string;
   content: string[];
@@ -12,25 +10,24 @@ export default function IntroduceFieldComponent({
   title,
 }: IProps) {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center hover:border-gray-300 border rounded-md shadow">
-      {/* Image Section */}
-      <div className="md:w-1/2 mb-8 md:mb-0">
-        <Image
-          alt=""
-          src={src}
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full"
-        />
-      </div>
+    <div className="relative p-8 w-full min-h-[13rem] border hover:border-gray-300 hover:shadow-2xl rounded-md shadow overflow-hidden">
+      {/* Image Container */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transform transition-transform duration-300 ease-in-out hover:scale-120" // 여기에 `hover:scale-120`를 추가했습니다.
+        style={{ backgroundImage: `url(${src})` }}
+      ></div>
 
-      {/* Content Section */}
-      <div className="md:w-1/2 md:pl-8">
-        <h2 className="text-2xl font-bold mb-4">{title}</h2>
-        <ul className="mb-6">
-          {content.map((item) => (
-            <li className="mb-2" key={item}>
+      {/* Dimmed Layer */}
+      <div className="absolute inset-0 bg-black opacity-60 transition-opacity duration-300 hover:opacity-50"></div>
+
+      {/* Content on Image */}
+      <div className="relative z-10 p-4 transition-colors duration-300">
+        <h2 className="text-2xl font-bold mb-4 text-white hover:text-gray-300">
+          {title}
+        </h2>
+        <ul className="mb-6 text-white hover:text-gray-300">
+          {content.map((item, index) => (
+            <li className="mb-2" key={index}>
               - {item}
             </li>
           ))}

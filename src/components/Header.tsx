@@ -143,7 +143,7 @@ export default function Header() {
               </div>
             </div>
           )}
-          {activeDropdown === "제품소개" && (
+          {/* {activeDropdown === "제품소개" && (
             <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="호스" />
@@ -218,7 +218,7 @@ export default function Header() {
                 <DropdownContentComponent title="구조용 스트레처 백" />
               </div>
             </div>
-          )}
+          )} */}
           {activeDropdown === "홍보센터" && (
             <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">

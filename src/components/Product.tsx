@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 interface IProps {
   title: string;
   content: string[];
@@ -7,38 +8,34 @@ interface IProps {
 
 export default function ProductComponent({ content, title, img }: IProps) {
   return (
-    <>
-      <div className="p-8 flex items-center justify-center w-full min-h-52">
-        <div className="flex flex-col md:flex-row justify-between items-center hover:border-gray-300 border rounded-md p-8">
-          {/* Image Section */}
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <Image
-              alt={title}
-              src={img}
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="w-full max-h-52"
-            />
-          </div>
+    <div
+      className="relative p-8 w-full min-h-[13rem] border hover:border-gray-300 hover:shadow-2xl rounded-md shadow overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: `url(${img})` }}
+    >
+      {/* Image Container */}
+      <div className="absolute inset-0 bg-cover bg-center transform transition-transform duration-300 ease-in-out hover:scale-120"></div>
 
-          {/* Content Section */}
-          <div className="md:w-1/2 md:pl-8">
-            <h2 className="text-2xl font-bold mb-4">{title}</h2>
-            <ul className="mb-6">
-              {content?.map((item) => (
-                <li className="mb-2" key={item}>
-                  - {item}
-                </li>
-              ))}
-            </ul>
+      {/* Dimmed Layer */}
+      <div className="absolute inset-0 bg-black opacity-60 transition-opacity duration-300 hover:opacity-50"></div>
 
-            <button className="bg-blue-500 text-white py-2 px-6 rounded">
-              제품 상세보기
-            </button>
-          </div>
-        </div>
+      {/* Content on Image */}
+      <div className="relative z-10 p-4 transition-colors duration-300">
+        <h2 className="text-2xl font-bold mb-4 text-white hover:text-gray-300">
+          {title}
+        </h2>
+        <ul className="mb-6 text-white hover:text-gray-300">
+          {content?.map((item, index) => (
+            <li className="mb-2" key={index}>
+              - {item}
+            </li>
+          ))}
+        </ul>
       </div>
-    </>
+
+      {/* Button positioned at the bottom right */}
+      <button className="absolute right-4 bottom-4 bg-blue-500 text-white py-2 px-6 rounded">
+        제품 상세보기
+      </button>
+    </div>
   );
 }

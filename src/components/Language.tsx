@@ -17,13 +17,14 @@ export default function LanguageComponent() {
       <div
         className={`
       ${languageToggle ? "block" : "hidden"}  
-      text-center absolute border-[1px] border-solid border-black bg-white p-3 w-20 rounded-md -left-6 cursor-pointer mt-3
+      text-center absolute border-[1px] border-solid border-black bg-white p-3 w-24 rounded-md mt-3 -left-6 cursor-pointer
       `}
       >
-        <p>한국어</p>
-        <p>English</p>
-        <p>中国語</p>
-        <p>日本語</p>
+        <p className="hover:bg-gray-200 py-1 rounded-md">한국어</p>
+        <p className="hover:bg-gray-200 py-1 rounded-md">English</p>
+        <p className="hover:bg-gray-200 py-1 rounded-md">日本語</p>
+        <p className="hover:bg-gray-200 py-1 rounded-md">中文(简)</p>
+        <p className="hover:bg-gray-200 py-1 rounded-md">中文(繁)</p>
       </div>
     </div>
   );
