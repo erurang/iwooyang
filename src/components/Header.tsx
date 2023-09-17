@@ -108,7 +108,7 @@ export default function Header() {
       </div>
       {activeDropdown && (
         <div
-          className="fixed top-15 left-0 right-0 h-full bg-white border-t-[1px] border-gray-100
+          className=" left-0 right-0 h-full bg-white border-t-[1px] border-gray-100
           "
           onMouseEnter={() => setUnderlineAnimation("shrinkToCenter")}
           onMouseLeave={() => setUnderlineAnimation("growFromCenter")}
@@ -133,8 +133,11 @@ export default function Header() {
 
               <div className="pl-6 pr-12 ">
                 <DropdownTitleComponent title="사업소개" />
-                <DropdownContentComponent title="주요사업" />
-                <DropdownContentComponent title="적용분야" />
+                <DropdownContentComponent
+                  title="주요사업"
+                  href="major-business"
+                />
+                <DropdownContentComponent title="적용분야" href="field" />
               </div>
             </div>
           )}
