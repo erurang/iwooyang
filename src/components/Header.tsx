@@ -223,11 +223,17 @@ export default function Header() {
             <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="안내" />
-                <DropdownContentComponent title="보도자료" />
+                <DropdownContentComponent
+                  title="보도자료"
+                  href="/press-release"
+                />
               </div>
               <div className="pl-6 pr-12 ">
                 <DropdownTitleComponent title="정보" />
-                <DropdownContentComponent title="회사홍보 자료" />
+                <DropdownContentComponent
+                  title="회사홍보 자료"
+                  href="promotion-materials"
+                />
               </div>
             </div>
           )}
