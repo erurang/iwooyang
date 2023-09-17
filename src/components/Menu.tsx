@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import MenuItemComponent from "./MenuItem";
 import MenuTitleComponent from "./MenuTitle";
 
@@ -20,8 +21,10 @@ export default function MenuComponent() {
         {sections.map((section, index) => (
           <div key={index} className="space-y-4">
             <MenuTitleComponent title={section.title} />
-            {section.items.map((item) => (
-              <MenuItemComponent key={item} title={item} />
+            {section.items.map((item, itemIndex) => (
+              <Link key={itemIndex} href={section.router[itemIndex]}>
+                <MenuItemComponent title={item} />
+              </Link>
             ))}
           </div>
         ))}
@@ -35,11 +38,19 @@ const sections = [
     title: "기업정보",
     items: [
       "인사말",
+      "연혁",
       "주요사업",
       "적용분야",
-      "연혁",
       "지적재산권 및 인증서",
       "찾아오시는 길",
+    ],
+    router: [
+      "/",
+      "/history",
+      "/major-business",
+      "/field",
+      "/credentials",
+      "/??",
     ],
   },
   {
@@ -54,13 +65,30 @@ const sections = [
       "CFRP/플라스틱 가공",
       "복합소재 응용품",
     ],
+    router: [
+      "/product",
+      "/product",
+      "/product",
+      "/product",
+      "/product",
+      "/product",
+      "/product",
+      "/product",
+    ],
+  },
+  {
+    title: "홍보센터",
+    items: ["보도자료", "회사홍보자료"],
+    router: ["/news", "/news2"],
   },
   {
     title: "고객지원",
     items: ["공지사항", "온라인문의", "고객센터"],
+    router: ["/notice", "/inquiry", "/cs"],
   },
   {
     title: "채용",
     items: ["지원"],
+    router: ["/support"],
   },
 ];

@@ -59,35 +59,37 @@ export default function Header() {
 
         <div className="lg:space-x-8 hidden lg:flex justify-center">
           {/* 이부분은 나중에 i18n적용후 처리 */}
-          {["기업정보", "제품소개", "고객지원", "채용"].map((menu: any) => (
-            <div
-              className={`pt-2 text-lg ${
-                menu === "제품소개" && "cursor-pointer"
-              }`}
-              key={menu}
-              onMouseEnter={() => {
-                setActiveDropdown(menu);
-                setUnderlineAnimation("growFromCenter");
-              }}
-              onClick={() => {
-                if (menu === "제품소개")
-                  router.push("/product", { scroll: false });
-                return;
-              }}
-              onMouseLeave={() => setUnderlineAnimation("shrinkToCenter")}
-            >
-              <span>
-                {menu}
-                <div
-                  className={`h-1 mt-1 bg-[#00B1E2] transition-all duration-300 transform scaleX-0 ${
-                    activeDropdown === menu
-                      ? "animate-" + underlineAnimation
-                      : "animate-shrinkToCenter"
-                  }`}
-                ></div>
-              </span>
-            </div>
-          ))}
+          {["기업정보", "제품소개", "홍보센터", "고객지원", "채용"].map(
+            (menu: any) => (
+              <div
+                className={`pt-2 text-lg ${
+                  menu === "제품소개" && "cursor-pointer"
+                }`}
+                key={menu}
+                onMouseEnter={() => {
+                  setActiveDropdown(menu);
+                  setUnderlineAnimation("growFromCenter");
+                }}
+                onClick={() => {
+                  if (menu === "제품소개")
+                    router.push("/product", { scroll: false });
+                  return;
+                }}
+                onMouseLeave={() => setUnderlineAnimation("shrinkToCenter")}
+              >
+                <span>
+                  {menu}
+                  <div
+                    className={`h-1 mt-1 bg-[#00B1E2] transition-all duration-300 transform scaleX-0 ${
+                      activeDropdown === menu
+                        ? "animate-" + underlineAnimation
+                        : "animate-shrinkToCenter"
+                    }`}
+                  ></div>
+                </span>
+              </div>
+            )
+          )}
         </div>
         <div className="flex justify-end items-center">
           <LanguageComponent />
@@ -141,7 +143,7 @@ export default function Header() {
               </div>
             </div>
           )}
-          {/* {activeDropdown === "제품소개" && (
+          {activeDropdown === "제품소개" && (
             <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
                 <DropdownTitleComponent title="호스" />
@@ -209,14 +211,26 @@ export default function Header() {
                 <DropdownTitleComponent title="무분진" />
                 <DropdownContentComponent title="케이블 포드" />
               </div>
-             
+
               <div className="pl-6 pr-12 ">
                 <DropdownTitleComponent title="복합소재 응용품" />
                 <DropdownContentComponent title="방탄 방검용 보호복 소재" />
                 <DropdownContentComponent title="구조용 스트레처 백" />
               </div>
             </div>
-          )} */}
+          )}
+          {activeDropdown === "홍보센터" && (
+            <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
+              <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
+                <DropdownTitleComponent title="안내" />
+                <DropdownContentComponent title="보도자료" />
+              </div>
+              <div className="pl-6 pr-12 ">
+                <DropdownTitleComponent title="정보" />
+                <DropdownContentComponent title="회사홍보 자료" />
+              </div>
+            </div>
+          )}
           {activeDropdown === "고객지원" && (
             <div className="flex px-16 py-4 bg-white justify-center border-b-[1px] border-gray-200">
               <div className="pl-6 pr-12 border-r-[1px] border-gray-200">
